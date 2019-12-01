@@ -1,0 +1,21 @@
+1 - Faça uma consulta que retorne o codigo do aluno, o nome,  a matricula, o endereço de email, o nome da turma, e o nome do representante dos alunos que cursaram informática 1 semestre 2017. Apresente o resultado em ordem alfabética. 
+R:SELECT A.codAluno, A.nome, A.matricula, A.email,T.nome, T.representante
+FROM turma AS T
+INNER JOIN matricula AS M ON T.codTurma = M.codTurma_FK
+INNER JOIN aluno AS A ON A.codAluno = M.codAluno_FK
+WHERE T.codTurma = 6;
+	
+
+------------------------------------------------------------------------------------------------------------------------
+2 - Faça uma consulta que retorne o nome do curso, o nome do aluno,  a matricula do aluno, o endereço de email e a data de nascimento dos alunos que foram matriculados pelo funcionário Abílio Araripe. Apresente o resultado ordenado do mais velho para o mais novo.
+
+R SELECT C.nome, A.nome, A.matricula, A.email, A.dtNascimento, F.nome
+FROM curso  C
+INNER JOIN matricula  M
+ON c.codCurso = M.codTurma_Fk
+INNER JOIN aluno  A 
+ON A.codAluno = M.codAluno_Fk
+INNER JOIN funcionario  F 
+ON F.codFuncionario = M.codFuncionario_Fk
+WHERE F.codFuncionario = 2
+ORDER BY a.dtNascimento ASC;

@@ -1,0 +1,32 @@
+1 - Faça uma consulta que retorne o codigo do aluno, o nome,  a matricula, e o endereço de email dos alunos 
+que nasceram entre 09 setembro de 1991 09 setembro de 1993. Apresente o resultado em ordem alfabética. 
+
+SELECT codAluno, nome, email FROM aluno WHERE dtNascimento BETWEEN ('1991-09-09') AND ('1993-09-09') ORDER BY nome ASC 
+------------------------------------------------------------------------------------------------------------------------
+2 - Faça uma consulta que retorne o nome,  a matricula, o endereço de email e a data de nascimento dos alunos 
+cuja matricula 750000 e 850000. Apresente o resultado ordenado do mais velho para o mais novo.
+
+SELECT nome,matricula,email,dtNascimento FROM aluno WHERE matricula BETWEEN ('750000 ') AND ('850000') ORDER BY `aluno`.`dtNascimento` ASC 
+-----------------------------------------------------------------------------------------------------------------------------------
+3 - Faça uma consulta que retorne o nome,  a matricula, e o endereço de email dos alunos que possuem email no domínio gmail (conta google).
+Apresente o resultado ordenado em ordem alfabética.
+
+R: SELECT nome, matricula, email FROM controlefrequencia.aluno WHERE email LIKE "%@gmail.com" ORDER BY nome ASC
+------------------------------------------------------------------------------------------------------------------------------------------------
+4 - Faça uma consulta que retorne o nome,  o RG, e o CPF dos alunos que possuem o segundo nome iniciado com a letra "b".
+Apresente o resultado ordenado em ordem alfabética.
+
+R: SELECT nome, rg, cpf FROM controlefrequencia.aluno WHERE nome LIKE "% B%" ORDER BY nome ASC
+------------------------------------------------------------------------------------------------------------------------------------------------
+5 - Faça uma consulta que retorne o nome,  o RG, e o endereço de email dos alunos que possuem o email do yahoo registrado no Brasil.
+Apresente o resultado ordenado em ordem alfabética.
+
+ SELECT nome, rg, email FROM controlefrequencia.aluno WHERE email LIKE "%@yahoo.com.br" ORDER BY nome ASC;
+------------------------------------------------------------------------------------------------------------------------------------------------
+6 - Faça uma consulta que retorne o nome,  o RG, e o endereço de email dos alunos que não possuem o email registrado no Brasil.
+Apresente o resultado ordenado em ordem alfabética.
+
+ SELECT nome, rg, email FROM controlefrequencia.aluno WHERE email NOT LIKE "%'.br" ORDER BY nome ASC;
+------------------------------------------------------------------------------------------------------------------------------------------------
+7 - Faça uma consulta que retorne uma quantidade de alunos que começam com a letra C
+  SELECT COUNT(codAluno) nome FROM controlefrequencia.aluno WHERE nome LIKE 'C%';

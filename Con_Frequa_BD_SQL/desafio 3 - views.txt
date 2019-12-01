@@ -1,0 +1,19 @@
+
+Criando uma View
+CREATE VIEW nome_da_view AS SELECT * FROM nome_tabela;
+--------------------------------------------------------------------------------------------------------------
+Verificar se a View foi criada
+Execute a query:
+SHOW TABLES;
+Caso exista uma nova tabela chamada “nome_da_view” foi o nome que definimos para essa nova view;
+A criação da view foi executada com sucesso.
+---------------------------------------------------------------------------------------------------
+Alterando uma View
+Execute o comando:
+ALTER VIEW nome_da_view AS SELECT * FROM nome_outra_tabela;
+-----------------------------------------------------------------------------------------------
+Excluindo uma View
+Execute a query:
+DROP VIEW nome_da_view;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
