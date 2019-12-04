@@ -5,8 +5,8 @@ CREATE VIEW nome_da_view AS SELECT * FROM nome_tabela;
 Verificar se a View foi criada
 Execute a query:
 SHOW TABLES;
-Caso exista uma nova tabela chamada ìnome_da_viewî foi o nome que definimos para essa nova view;
-A criaÁ„o da view foi executada com sucesso.
+Caso exista uma nova tabela chamada ‚Äúnome_da_view‚Äù foi o nome que definimos para essa nova view;
+A cria√ß√£o da view foi executada com sucesso.
 ---------------------------------------------------------------------------------------------------
 Alterando uma View
 Execute o comando:
@@ -16,4 +16,24 @@ Excluindo uma View
 Execute a query:
 DROP VIEW nome_da_view;
 
---------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CREATE VIEW info_2017  AS 
+SELECT A.codAluno, A.nome,A.matricula, A.email,T.nome As turma_nome,T.representante 
+FROM turma AS T 
+INNER JOIN matricula AS M ON T.codTurma = M.codTurma_FK 
+INNER JOIN aluno AS A ON A.codAluno = M.codAluno_FK 
+WHERE T.codTurma = 6 
+
+-----------------------------------------------------------------------------------------------------------------------
+CREATE VIEW matriculados_func_Ab√≠lio AS
+
+SELECT C.nome curso_nome , A.nome aluno_nome, A.matricula, A.email,A.dtNascimento, F.nome funcionario_nome
+FROM curso  c
+INNER JOIN matricula  M
+ON c.codCurso = M.codTurma_Fk
+INNER JOIN aluno  A 
+ON A.codAluno = M.codAluno_Fk
+INNER JOIN funcionario  F 
+ON F.codFuncionario = M.codFuncionario_Fk
+WHERE F.codFuncionario = 2
+ORDER BY a.dtNascimento ASC;
